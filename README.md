@@ -1,6 +1,7 @@
 # insist
 
 [![LICENSE](https://img.shields.io/github/license/jabau/insist)](https://opensource.org/licenses/MIT)
+[![semver](https://img.shields.io/badge/semver-2.0.0-blue)](https://semver.org/)
 
 Something something bla bla...
 
@@ -16,6 +17,10 @@ For building the library you need:
 ```shell
 mvn install
 ```
+
+## Changelog
+
+See the [CHANGELOG](https://github.com/jabau/insist/blob/master/CHANGELOG.md) file.
 
 ## Copyright
 
