@@ -2,6 +2,7 @@
 
 [![LICENSE](https://img.shields.io/github/license/jabau/insist)](https://opensource.org/licenses/MIT)
 [![semver](https://img.shields.io/badge/semver-2.0.0-blue)](https://semver.org/)
+[![Build Status](https://travis-ci.org/jabau/insist.svg?branch=master)](https://travis-ci.org/jabau/insist)
 
 Insist is a framework for enforcing value invariants using a [fluent](https://en.wikipedia.org/wiki/Fluent_interface) API and [hamcrest](http://hamcrest.org/JavaHamcrest/index) matchers.
 
