@@ -10,6 +10,12 @@
   <groupId>dk.jabau</groupId>
   <name>insist</name>
 
+  <scm>
+		<url>https://github.com/jabau/insist</url>
+		<connection>scm:git:git://github.com/jabau/insist.git</connection>
+		<developerConnection>scm:git:git@github.com:jabau/insist.git</developerConnection>
+	</scm>
+
   <properties>
     <java.version>1.8</java.version>
     <junit5.version>5.5.2</junit5.version>
@@ -80,6 +86,40 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>create</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <doCheck>false</doCheck>
+          <doUpdate>false</doUpdate>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+            <manifestEntries>
+              <Implementation-Build>${buildNumber}</Implementation-Build>
+            </manifestEntries>
+          </archive>
+        </configuration>
       </plugin>
     </plugins>
   </build>
