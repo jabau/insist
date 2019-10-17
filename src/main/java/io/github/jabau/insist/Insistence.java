@@ -1,4 +1,4 @@
-package dk.jabau.insist;
+package io.github.jabau.insist;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 

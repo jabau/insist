@@ -7,22 +7,28 @@
 
   <artifactId>insist</artifactId>
   <version>1.0</version>
-  <groupId>dk.jabau</groupId>
+  <groupId>io.github.jabau</groupId>
   <name>insist</name>
+
+  <developers>
+    <developer>
+      <name>Jan Bauer Nielsen</name>
+    </developer>
+  </developers>
+  
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <scm>
 		<url>https://github.com/jabau/insist</url>
 		<connection>scm:git:git://github.com/jabau/insist.git</connection>
 		<developerConnection>scm:git:git@github.com:jabau/insist.git</developerConnection>
 	</scm>
-
-  <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
-      </url>
-    </repository>
-  </distributionManagement>
 
   <properties>
     <java.version>1.8</java.version>
@@ -134,13 +140,16 @@
 
   <profiles>
     <profile>
-      <id>release-sign-artifacts</id>
+      <id>release</id>
       <activation>
-        <property>
-          <name>release</name>
-          <value>true</value>
-        </property>
+        <activeByDefault>false</activeByDefault>
       </activation>
+      <distributionManagement>
+        <repository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+      </distributionManagement>
       <build>
         <plugins>
           <plugin>
