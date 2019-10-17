@@ -7,7 +7,7 @@
 Insist is a framework for enforcing value invariants using a [fluent](https://en.wikipedia.org/wiki/Fluent_interface) API and [hamcrest](http://hamcrest.org/JavaHamcrest/index) matchers.
 
 ```java
-import static dk.jabau.insist.Insistence.insist;
+import static io.github.jabau.insist.Insistence.insist;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.Matchers.notNullValue;
 
