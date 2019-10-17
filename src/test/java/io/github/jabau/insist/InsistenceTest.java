@@ -1,8 +1,8 @@
-package dk.jabau.insist;
+package io.github.jabau.insist;
 
 import org.junit.jupiter.api.Test;
 
-import static dk.jabau.insist.Insistence.insist;
+import static io.github.jabau.insist.Insistence.insist;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
