@@ -9,10 +9,14 @@
   <version>1.0</version>
   <groupId>io.github.jabau</groupId>
   <name>insist</name>
+  <description>Insist is a framework for enforcing value invariants using a fluent API and hamcrest matchers</description>
+  <url>https://github.com/jabau/insist</url>
 
   <developers>
     <developer>
+      <id>jabau</id>
       <name>Jan Bauer Nielsen</name>
+      <email>29193507+jabau@users.noreply.github.com</email>
     </developer>
   </developers>
   
@@ -28,6 +32,7 @@
 		<url>https://github.com/jabau/insist</url>
 		<connection>scm:git:git://github.com/jabau/insist.git</connection>
 		<developerConnection>scm:git:git@github.com:jabau/insist.git</developerConnection>
+    <tag>HEAD</tag>
 	</scm>
 
   <properties>
@@ -152,6 +157,61 @@
       </distributionManagement>
       <build>
         <plugins>
+           <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+                <configuration>
+                  <archive>
+                    <manifest>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                      <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                    </manifest>
+                    <manifestEntries>
+                      <Implementation-Build-Date>${maven.build.timestamp}</Implementation-Build-Date>
+                      <X-Compile-Source-JDK>${java.version}</X-Compile-Source-JDK>
+                      <X-Compile-Target-JDK>${java.version}</X-Compile-Target-JDK>
+                    </manifestEntries>
+                  </archive>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.1.1</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <configuration>
+                  <quiet>true</quiet>
+                  <archive>
+                    <manifest>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                      <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                    </manifest>
+                    <manifestEntries>
+                      <Implementation-Build-Date>${maven.build.timestamp}</Implementation-Build-Date>
+                      <X-Compile-Source-JDK>${java.version}</X-Compile-Source-JDK>
+                      <X-Compile-Target-JDK>${java.version}</X-Compile-Target-JDK>
+                    </manifestEntries>
+                  </archive>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
